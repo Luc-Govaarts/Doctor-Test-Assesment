@@ -8,6 +8,7 @@ export default function PatientSignup() {
     const [phone, set_phone] = useState("")
     const [gender, set_gender] = useState("")
     const [birthdate, set_birthdate] = useState("")
+    const [formsubmitted, set_formsubmitted] = useState(false)
 
     function submitHandler() {
         console.log(`
@@ -17,12 +18,8 @@ export default function PatientSignup() {
         Patients gender:   ${gender}
         Patients phone number: ${phone}
         Patients email: ${email}`)
+        set_formsubmitted(true)
     }
-
-    // function messageHandler() {
-    //      ? 'Thanks for filling out the form' 
-    //     : 'Please fill out the form and press submit';
-    // }
 
     return <>
             <div>
@@ -55,8 +52,11 @@ export default function PatientSignup() {
                 min="1990-01-01" max="2020-05-25"
                 onChange={event => {set_birthdate(event.target.value)}}>
                 </input>
-                <button onClick={submitHandler()}>Submit</button>
-                {/* <p>{messageHandler()}</p> */}
+                <button onClick={submitHandler}>Submit</button>
+            </div>
+            <div>
+                {formsubmitted ? 'Thank you for signing up, we will be in conctact'
+                : 'Please fill out the form and press submit'}
             </div>
         </>
 }
