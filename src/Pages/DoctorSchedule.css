@@ -1,0 +1,7 @@
+table {
+    display: block;
+    position: relative;
+    width: 200px;
+    margin-left: 40%;
+    border: 2px solid black;
+}

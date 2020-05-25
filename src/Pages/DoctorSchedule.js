@@ -1,5 +1,6 @@
 import React from 'react'
 import Contact from '../Components/Contact'
+import './DoctorSchedule.css'
 
 export default function DoctorSchedule() {
     return (
