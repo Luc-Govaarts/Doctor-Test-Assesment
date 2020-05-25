@@ -13,8 +13,9 @@ export default function DoctorSchedule() {
         }
         fetchDoctorData()
     },[])
-
-    const tableBody = doctorsData.map(doctor => {
+    
+    const tableBody = 
+        doctorsData.map(doctor => {
         const doctorName = doctor.doctor 
         const doctorOnDuty = doctor.onDuty ? 'On duty' : 'Not on duty'
         return (
