@@ -4,12 +4,14 @@ import './DoctorSchedule.css'
 import axios from 'axios'
 
 export default function DoctorSchedule() {
+    const url = "https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors"
     const [doctors, set_doctors] = useState([])
     const [searchStatus, set_search_status] = useState("idle")
-    useEffect(() => {      
-        set_search_status("Loading data")  
-        async function fetchDoctorData(){
-            const response = await axios.get("https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors")
+
+    useEffect(() => {        
+        async function fetchDoctorData(){  
+            set_search_status("Loading data")                  
+            const response = await axios.get(url)
             set_doctors(response.data)
         }
         fetchDoctorData()
@@ -19,7 +21,9 @@ export default function DoctorSchedule() {
     const tableBody = 
         doctors.map(doctor => {
         const doctorName = doctor.doctor 
-        const doctorOnDuty = doctor.onDuty ? 'On duty' : 'Not on duty'
+        const doctorOnDuty = doctor.onDuty 
+            ? 'On duty' 
+            : 'Not on duty'
             return (
                 <tr>
                     <td>{doctorName}</td>
@@ -28,15 +32,15 @@ export default function DoctorSchedule() {
                 )
             })      
         
-    function loadingMessage(searchStatus) {
+    function loading(searchStatus) {
         if (searchStatus === "Loading data") {
-            return `${searchStatus}`
+            return {searchStatus}
         } else {
-            return ``
+            return ""
         }
     }
-
-
+    const loadingMessage = loading(searchStatus)
+    
     return (
         <div>
             <h1>Who is on duty?</h1>
@@ -55,7 +59,7 @@ export default function DoctorSchedule() {
             </table>
             <Contact />
             <div>
-                {loadingMessage(searchStatus)}
+                {loadingMessage}
             </div>  
             
         </div>
