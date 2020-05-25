@@ -10,7 +10,7 @@ export default function Navbar() {
                 <ul>
                     <li><NavLink to="/" exact={true}>Home</NavLink></li>
                     <li><NavLink to="/schedule">Doctor Schedule</NavLink></li>
-                    <li><NavLink to="/signup">Patient Signup</NavLink></li>
+                    <li><NavLink to="/sign">Patient Signup</NavLink></li>
                     <li><NavLink to="/database">Patient Database</NavLink></li>
                 </ul>
             </nav>
