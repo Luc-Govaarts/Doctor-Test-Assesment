@@ -20,7 +20,9 @@ export default function PatientSignup() {
                 <option>Prefer not to say</option>
             </select>
             <h2>date of birth</h2>
-            <input type="date" id="date" min="1990-01-01" max="2020-05-25"></input>
+            <input type="date" id="date" 
+            min="1990-01-01" max="2020-05-25"></input>
+            <button>Submit</button>
         </div>
     )
 }
