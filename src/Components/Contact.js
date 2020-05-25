@@ -1,8 +1,8 @@
 import React from 'react'
+import './Contact.css'
 
 export default function Contact() {
     var today = new Date(); 
-    console.log("Testing getHours:", today.getHours())
     function openOrClosed() {
         if(today.getHours() >= 17 || today.getHours() < 8) {
             return "Closed"

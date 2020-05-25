@@ -5,6 +5,8 @@ nav {
 
 nav li {
     display: inline;
-    font-weight: bold;
     padding: 20px;
+}
+.active {
+    font-weight: bold;
 }
