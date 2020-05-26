@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams, Link} from 'react-router-dom'
 import Axios from 'axios'
+import Button from '../Components/Button'
 
 export default function PatientDetails() {
     const [patientData, set_patientData] = useState([])
@@ -38,8 +39,7 @@ export default function PatientDetails() {
                 })}
             </ul> */}
             <p>{prescriptions}</p>
-            <Link to="/database">
-            <button> Go back to the database
-                </button></Link>
+            <Button goto="/database"
+            display="Go back to the database"/>
          </>
 }
