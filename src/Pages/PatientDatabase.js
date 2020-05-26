@@ -14,34 +14,38 @@ export default function PatientDatabase() {
         }
         fetchPatientData()
     },[])
-    
-    console.log("patient data test:", patient_data)
+
     function sortByDoctor(event) {
         set_sort_by(event.target.value)
     }
 
     function filterPatients(patients) {
-        if (sort_by == '1') {
-            patients.filter(patient => {
-                return patient.doctocId === '1'
+        console.log("Testing patients:", patients)
+        if (sort_by === '1') {
+            return patients.filter(patient => {
+                return patient.doctorId === 1
             })
-        } else if (sort_by == '2') {
-            patients.filter(patient => {
-                return patient.doctocId === '2'
+        } else if (sort_by === '2') {
+            return patients.filter(patient => {
+                return patient.doctorId === 2
             })
-        } else if (sort_by == '3') {
-            patients.filter(patient => {
-                return patient.doctocId === '3'
+        } else if (sort_by === '3') {
+            return patients.filter(patient => {
+                return patient.doctorId === 3
             })
         } else {
             return patients
         }
     }
     const filtered_patients = filterPatients(patient_data)
-    console.log("sort by test:", sort_by)
-    console.log("filtered patient data test:", filtered_patients)
+    
+    function compare_name(patient_a, patient_b) {
+        return patient_a.name.localeCompare(patient_b.name)
+    }
+    
+    const sorted_filtered_patients = filtered_patients.sort(compare_name)
 
-    const Patientlist = filtered_patients.map((patient, i )=> {
+    const Patientlist = sorted_filtered_patients.map((patient, i )=> {
         return <PatientCard 
         key={i}
         name={`${patient.firstName} ${patient.lastName}`} 
