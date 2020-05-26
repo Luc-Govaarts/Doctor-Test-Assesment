@@ -9,8 +9,7 @@ export default function DoctorSchedule() {
     const [searchStatus, set_search_status] = useState(true)
 
     useEffect(() => {        
-        async function fetchDoctorData(){  
-            set_search_status("Loading data")                  
+        async function fetchDoctorData(){                   
             const response = await axios.get(url)
             set_doctors(response.data)
         }

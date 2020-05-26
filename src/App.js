@@ -6,7 +6,7 @@ import Homepage from './Pages/Homepage'
 import DoctorSchedule from './Pages/DoctorSchedule'
 import PatientDatabase from './Pages/PatientDatabase'
 import PatientSignup from './Pages/PatientSignup'
-import PatientDetails from './Components/PatientDetails';
+import PatientDetails from './Pages/PatientsDetails'
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
       <Switch>
         <Route path="/sign" component={PatientSignup} />
         <Route path="/schedule" component={DoctorSchedule} />
-        <Route path="/database" component={PatientDatabase} />
-        <Route path="/database/:patientid" component={PatientDetails}/>
+        <Route exact path="/database" component={PatientDatabase} />
+        <Route exact path="/database/:patientid" component={PatientDetails}/>
         <Route exact path="/" component={Homepage} />
       </Switch>
     </div>

@@ -319,12 +319,12 @@ Copy this this rubric into a file called: `ASSESSMENT.md`
 | 2 Contact Details | 4          | 4/4  | 0/4       |
 | 3 Availability    | 7          | 5/7  | 0/7       |
 | 4 Sign up         | 8          | 8/8  | 0/8       |
-| 5 Patient DB      | 16         | 0/16 | 0/16      |
-| 6 Patient Details | 5          | 0/5  | 0/5       |
+| 5 Patient DB      | 16         | 14/16| 0/16      |
+| 6 Patient Details | 5          | 5/5  | 0/5       |
 | 7 Express server  | 7          | 0/7  | 0/7       |
 | 8 Styling         | 2          | 2/2  | 0/2       |
 | 9 Finishing up    | 6          | 6/6  | 0/6       |
-| Total             | 60         | 30/60 | 0/60      |
+| Total             | 60         | 49/60| 0/60      |
 
 | 1. Navigation - Criteria                                  | Points | Self | Evaluator |
 | --------------------------------------------------------- | ------ | ---- | --------- |
@@ -347,11 +347,11 @@ Copy this this rubric into a file called: `ASSESSMENT.md`
 | ----------------------------------------------------------------- | ------ | ---- | --------- |
 | Doctor availabilty is displayed on the who is on duty page        | 1      |   1  |           |
 | The data is fetched from the api, not hardcoded                   | 2      |   2  |           |
-| If the data is still being fetched, display "loading" to the user | 2      |   0  |           |
+| If the data is still being fetched, display "loading" to the user | 2      |   2  |           |
 | The data is displayed using .map                                  | 1      |   1  |           |
 | There is a warning in the console regarding "key" props           | -1     |   0  |           |
 | Doctor availability is displayed using an html `table` element    | 1      |   1  |           |
-| Total                                                             | 7      |   5  |           |
+| Total                                                             | 7      |   7  |           |
 
 | 4. Sign up - Criteria                                                            | Points | Self | Evaluator |
 | -------------------------------------------------------------------------------- | ------ | ---- | --------- |
@@ -368,27 +368,27 @@ Copy this this rubric into a file called: `ASSESSMENT.md`
 | 5. Patient DB - Criteria                                                  | Points | Self | Evaluator |
 | ------------------------------------------------------------------------- | ------ | ---- | --------- |
 | The `name`, `id` & `dateOfBirth` is displayed for all patients            | 1      |  1   |           |
-| The data for each patient is displayed using a seperate component         | 2      |  1   |           |
+| The data for each patient is displayed using a seperate component         | 2      |  2   |           |
 | The data is displayed using .map                                          | 1      |  1   |           |
 | There is a warning in the console regarding "key" props                   | -1     |  0   |           |
 | The patients are sorted by their `lastName` using .sort                   | 2      |  2   |           |
 | The data for the patients is fetched from the api, not hardcoded          | 1      |  1   |           |
-| Each patient displayed has a `show details` button                        | 0.5    |      |           |
-| The show details button links to the detail page for that patient         | 1.5    |      |           |
+| Each patient displayed has a `show details` button                        | 0.5    |  0.5 |           |
+| The show details button links to the detail page for that patient         | 1.5    |  1.5 |           |
 | The page has a `select` input for the 3 doctors names and `all`           | 1      |  1   |           |
-| When `all` is selected, all patients are displayed                        | 1      |      |           |
-| Selecting the name of a doctor filters the patients that are displayed    | 3      |      |           |
-| The names of the doctors in the `select` input are fetched, not hardcoded | 2      |      |           |
-| Total                                                                     | 16     |      |           |
+| When `all` is selected, all patients are displayed                        | 1      |  1   |           |
+| Selecting the name of a doctor filters the patients that are displayed    | 3      |  3   |           |
+| The names of the doctors in the `select` input are fetched, not hardcoded | 2      |  0   |           |
+| Total                                                                     | 16     |  14  |           |
 
 | 6. Patient Details - Criteria                                                 | Points | Self | Evaluator |
 | ----------------------------------------------------------------------------- | ------ | ---- | --------- |
-| 1 Dynamic route is implemented using React Router for the patient detail page | 1      |      |           |
-| The page displays the firstname, lastname, gender, dateOfBirth of a patient   | 0.5    |      |           |
-| The page displays the email, phoneNumber & prescriptions of a patient         | 0.5    |      |           |
-| The data on the page is fetched from the api, not hardcoded                   | 2      |      |           |
-| The data of all the patients is fetched from the api on this page             | -1     |      |           |
-| Total                                                                         | 5      |      |           |
+| 1 Dynamic route is implemented using React Router for the patient detail page | 1      |  1   |           |
+| The page displays the firstname, lastname, gender, dateOfBirth of a patient   | 0.5    |  0.5 |           |
+| The page displays the email, phoneNumber & prescriptions of a patient         | 0.5    |  0.5 |           |
+| The data on the page is fetched from the api, not hardcoded                   | 2      |  2   |           |
+| The data of all the patients is fetched from the api on this page             | -1     |  0   |           |
+| Total                                                                         | 5      |  5   |           |
 
 | 7. Express server - Criteria                                                                   | Points | Self | Evaluator |
 | ---------------------------------------------------------------------------------------------- | ------ | ---- | --------- |

@@ -1,5 +1,6 @@
 import React from 'react'
 import './PatientCard.css'
+import {Link} from 'react-router-dom'
 
 export default function PatientCard(props) {
     return (
@@ -7,7 +8,9 @@ export default function PatientCard(props) {
             <p>name: {props.name}</p>
             <p>id: {props.id}</p>
             <p>date of birth: {props.dateOfBirth}</p>
-            <button onClick={props.buttonHandler()}>Show details</button>
+            <Link to={`/database/${props.id}`} >
+                <button>Show details</button>
+                </Link>
         </div>
     )
 }

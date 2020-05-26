@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, } from 'react'
 import PatientCard from '../Components/PatientCard'
 import axios from 'axios'
 
@@ -20,7 +20,6 @@ export default function PatientDatabase() {
     }
 
     function filterPatients(patients) {
-        console.log("Testing patients:", patients)
         if (sort_by === '1') {
             return patients.filter(patient => {
                 return patient.doctorId === 1
@@ -40,7 +39,7 @@ export default function PatientDatabase() {
     const filtered_patients = filterPatients(patient_data)
     
     function compare_name(patient_a, patient_b) {
-        return patient_a.name.localeCompare(patient_b.name)
+        return patient_a.lastName.localeCompare(patient_b.lastName)
     }
     
     const sorted_filtered_patients = filtered_patients.sort(compare_name)
@@ -58,10 +57,10 @@ export default function PatientDatabase() {
             <h1>Patient Database</h1>
             <label>doctor</label>
             <select onChange={sortByDoctor}>
+                <option value='4'>All</option>
                 <option value='1'>Dr. Coventry</option>
                 <option value='2'>Dr. Adenet</option>
-                <option value='3'>Dr. Tollady</option>
-                <option value='4'>All</option>
+                <option value='3'>Dr. Tollady</option>  
             </select>
             {Patientlist}
         </div>
