@@ -6,7 +6,7 @@ import axios from 'axios'
 export default function DoctorSchedule() {
     const url = "https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors"
     const [doctors, set_doctors] = useState([])
-    const [searchStatus, set_search_status] = useState(true)
+    const [searchStatus, set_search_status] = useState(false)
 
     useEffect(() => {        
         async function fetchDoctorData(){                   
@@ -14,7 +14,7 @@ export default function DoctorSchedule() {
             set_doctors(response.data)
         }
         fetchDoctorData()
-        set_search_status(false)
+        set_search_status(true)
     },[])
     
     const tableBody = 
@@ -29,8 +29,11 @@ export default function DoctorSchedule() {
                     <td>{doctorOnDuty}</td>
                 </tr>
                 )
-            })      
-    
+            })    
+              
+    if (searchStatus === false) {
+        return <div> LOADING DATA </div>
+    } else {    
     return (
         <div>
             <h1>Who is on duty?</h1>
@@ -50,8 +53,8 @@ export default function DoctorSchedule() {
             <Contact />
             <div>
                 <em>{searchStatus ? 'Loading data': ''}</em>
-            </div>  
-            
+            </div>        
         </div>
     )
     }
+}
