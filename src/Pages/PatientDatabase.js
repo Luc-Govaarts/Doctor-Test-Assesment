@@ -2,6 +2,7 @@ import React, { useState, useEffect, } from 'react'
 import PatientCard from '../Components/PatientCard'
 import axios from 'axios'
 
+
 export default function PatientDatabase() {
     const patientDataUrl = 'https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients'
     const [patient_data, set_patient_data] = useState([])
@@ -53,7 +54,7 @@ export default function PatientDatabase() {
     })
 
     return (
-        <div>
+        <div className="Database">
             <h1>Patient Database</h1>
             <label>doctor</label>
             <select onChange={sortByDoctor}>

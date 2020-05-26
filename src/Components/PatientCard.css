@@ -1,7 +1,8 @@
 .patient {
+    display: flexbox;
     width: 250px;
     position: relative;
-    margin-left: 100px;
+    margin-left: 550px;
     margin-top: 30px;
     border: 1px solid black;
 }
