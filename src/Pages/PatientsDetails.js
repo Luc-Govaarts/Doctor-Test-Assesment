@@ -4,20 +4,23 @@ import Axios from 'axios'
 import Button from '../Components/Button'
 
 export default function PatientDetails() {
-    const [patientData, set_patientData] = useState([])
+    const [patientData, set_patientData] = useState({})
     const params = useParams()
   
     useEffect(() => {
         const navigateToPatientDetails = async () => {
+            console.log("before")
             const response = await Axios.get(`https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients/${params.patientid}`)
+            console.log("between")
             set_patientData(response.data)
+            console.log("after")
           }
           navigateToPatientDetails();
     },[])
       
     console.log("testing patient data:", patientData)
-    console.log("testing parans:", params)
-    const prescriptions = patientData.prescriptions
+    console.log("testing params:", params)
+    const prescriptions = patientData.prescriptions || []
     console.log("testing prescriptions:", prescriptions)
 
     return <>
@@ -33,12 +36,11 @@ export default function PatientDetails() {
                 <li>Phone Number: {patientData.phoneNumber}</li>
             </ul>
             <h5>Prescriptions</h5>
-            {/* <ul>
+            <ul>
                 {prescriptions.map(prescription => {
                     return <li>{prescription}</li>
                 })}
-            </ul> */}
-            <p>{prescriptions}</p>
+            </ul>
             <Button goto="/database"
             display="Go back to the database"/>
          </>

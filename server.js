@@ -1,15 +1,31 @@
 const express = require('express')
+const patientData = require('./patientData.json')
+const doctorData = require('./doctorData.json')
 
 const app = express()
 
-function onRequest () {
-    console.log('testing')
-  }
+app.get(
+    '/doctors',
+    (request, response) => {
+        response.send(doctorData)
+    }
+  )
 
 app.get(
-    '/test', // route to listen on
-    onRequest // callback runs when the route is requested
+    '/patients',
+    (request, response) => {
+        response.send(patientData)
+    }
   )
+
+app.get('/patients/:id', 
+    async (req, res) => {
+    const data = patientData.filter(
+      (patient) => patient.id === req.params.id
+    );
+    res.send(data);
+  });
+
 
 const port = 4000
 

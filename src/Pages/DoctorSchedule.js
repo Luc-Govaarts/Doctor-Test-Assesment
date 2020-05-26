@@ -52,7 +52,6 @@ export default function DoctorSchedule() {
             </table>
             <Contact />
             <div>
-                <em>{searchStatus ? 'Loading data': ''}</em>
             </div>        
         </div>
     )
